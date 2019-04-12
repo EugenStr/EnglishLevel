@@ -27,12 +27,21 @@
 		radio13 = document.getElementsByName('task13'),
 		pointsInner = document.getElementById('pointsInner'),
 		titleInner = document.getElementById('result-title'),
-		commentInner = document.getElementById('comment');
+		commentInner = document.getElementById('comment'),
+		counterTop = document.getElementById('counter-top'),
+		counterBot = document.getElementById('counter-bot');
 
 
 
-let resultPoint = 0;
+	let resultPoint = 0;
+	var count = randomInteger(100, 200);
 
+	function counterIt(num) {
+		counterTop.innerHTML = 'Данный тест прошли уже ' + num + ' человек!'
+		counterBot.innerHTML = 'Данный тест прошли уже ' + (num + 1) + ' человек!'
+	}
+
+	counterIt(count);
 
 	startButton.onclick = function() {
 		startPage.classList.add('displaynone')
@@ -174,3 +183,12 @@ let resultPoint = 0;
 			return commentInner.innerHTML = 'Понимаете практически все услышанное и прочитанное. Можете обобщить информацию из различных устных и письменных источников, оформляя доводы и мнения в виде связного текста. Можете говорить на любую тему без подготовки, точно и без затруднений выражая свою мысль, различая малейшие оттенки значений даже в самых сложных ситуациях.'
 		}
 	}
+
+	function randomInteger(min, max) {
+	  var rand = min + Math.random() * (max - min)
+	  rand = Math.round(rand);
+	  return rand;
+	}
+
+	
+
