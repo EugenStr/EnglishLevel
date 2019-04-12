@@ -1,0 +1,118 @@
+.tasks-transition {
+	padding-left: 150px;
+	& ul {
+		list-style: none;
+		display: inline-block;
+		padding-right: 1px;
+		
+		& .task1 {
+			display: inline-block;
+			cursor: pointer;
+			width: 45px;
+			height: 45px;
+			text-align: center;
+			line-height: 1.8em;
+			-webkit-border-radius: 100px;
+			        border-radius: 100px;
+			background: white;
+			font-size: 25px;
+			font-weight: bold;
+			
+		}
+
+		& p {
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+
+		& .active {
+			background: @green;
+			color: white;
+		}
+
+		& .complite {
+			background: #A9A9A9;
+		}
+	}
+}
+
+
+.test-block {
+	background: white;
+	margin: 0 40px;
+	font-size: 15px;
+	padding: 2px 15px;
+	-webkit-border-radius: 10px;
+	        border-radius: 10px;
+	text-align: left;
+	& .title-task {
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+	& .question-number {
+		margin: 0;
+		color: rgba(0,0,0,.4);
+		margin-bottom: 0;
+	}
+	& .question-task {
+		& .task1-answers {
+			display: block;
+			vertical-align: middle;
+		}
+	}
+	& .question-task2 {
+		margin: 0;
+		margin-bottom: 5px;
+	}
+	& .button {
+			padding: 10px 40px;
+			background: @green;
+			border: 1px solid #f2f2f2;
+			color: white;
+			font-weight: bold;
+			border-radius: 10px 20px 10px 20px;
+			margin-bottom: 10px;
+			cursor: pointer;
+			margin-top: 10px;
+			&:active {
+				box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);
+			}
+
+		}
+}
+
+
+.radio {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+}
+
+
+.grammar-test-block {
+	position: relative;
+	display: flex;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	
+}
+
+.grammar-flex {
+	margin-right: 60px;
+}
+
+.task6-button {
+	position: absolute;
+	top: -65;
+	left: 470;
+}
+
+.displaynone {
+	display: none;
+}

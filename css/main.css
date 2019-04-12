@@ -73,7 +73,7 @@ body {
   line-height: 1.05em;
   font-size: 35px;
   color: white;
-  width: 200px;
+  width: 260px;
   height: 40px;
   font-style: italic;
   margin-left: 50px;
@@ -175,10 +175,11 @@ body {
 .test-wrapper .main-test-block .main-test-block__button:active {
   box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
 }
-.test-wrapper .main-test-block .test-counter {
+.test-counter {
   background: rgba(0, 0, 0, 0.3);
   font-weight: bold;
   color: white;
+  text-align: center;
 }
 .footer-wrapper {
   width: 1200px;
@@ -202,7 +203,7 @@ body {
   line-height: 1.05em;
   font-size: 35px;
   color: white;
-  width: 200px;
+  width: 260px;
   height: 40px;
   font-style: italic;
   margin-left: 50px;
@@ -244,4 +245,140 @@ body {
   -webkit-border-radius: 100px;
   border-radius: 100px;
   border: 1px solid #f2f2f2;
+}
+.tasks-transition {
+  padding-left: 150px;
+}
+.tasks-transition ul {
+  list-style: none;
+  display: inline-block;
+  padding-right: 1px;
+}
+.tasks-transition ul .task1 {
+  display: inline-block;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 1.8em;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  background: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+.tasks-transition ul p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.tasks-transition ul .active {
+  background: #28c38a;
+  color: white;
+}
+.tasks-transition ul .complite {
+  background: #A9A9A9;
+}
+.test-block {
+  background: white;
+  margin: 0 40px;
+  font-size: 15px;
+  padding: 2px 15px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+.test-block .title-task {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.test-block .question-number {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 0;
+}
+.test-block .question-task .task1-answers {
+  display: block;
+  vertical-align: middle;
+}
+.test-block .question-task2 {
+  margin: 0;
+  margin-bottom: 5px;
+}
+.test-block .button {
+  padding: 10px 40px;
+  background: #28c38a;
+  border: 1px solid #f2f2f2;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px 20px 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.test-block .button:active {
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.radio {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.grammar-test-block {
+  position: relative;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.grammar-flex {
+  margin-right: 60px;
+}
+.task6-button {
+  position: absolute;
+  top: -65;
+  left: 470;
+}
+.displaynone {
+  display: none;
+}
+.result-field {
+  background: white;
+  margin: 0 40px;
+  font-size: 15px;
+  padding: 2px 15px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  text-align: left;
+  margin-top: 40px;
+  margin-bottom: 160px;
+}
+.result-title {
+  font-size: 30px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.result-points {
+  font-size: 20px;
+}
+.result-points span {
+  color: #CD5C5C;
+}
+.return {
+  padding: 10px 40px;
+  background: #28c38a;
+  border: 1px solid #f2f2f2;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px 20px 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.return:active {
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
 }
