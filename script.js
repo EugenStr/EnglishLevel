@@ -121,18 +121,10 @@
 		inner(resultPoint);
 		task6.classList.add('displaynone');
 		result.classList.remove('displaynone');
-		transition.classList.add('displaynone');
-			for (let i = 0; i < taskTransition.length; i++) {
-				taskTransition[i].classList.remove('active')
-				taskTransition[i].classList.remove('complete')
-			}
-			taskTransition[0].classList.add('active');
 	}
 
 	function back() {
-		result.classList.add('displaynone')
-		startPage.classList.remove('displaynone');
-		points = [];
+		document.location.reload(true);
 	}
 
 
