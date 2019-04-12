@@ -53,7 +53,7 @@
 		task1.classList.add('displaynone');
 		task2.classList.remove('displaynone');
 		taskTransition[1].classList.add('active')
-		taskTransition[0].classList.add('complite')
+		taskTransition[0].classList.add('complete')
 		checked(radio1)
 		answer(0, 1, points)
 		return console.log(points)
@@ -63,7 +63,7 @@
 		task2.classList.add('displaynone');
 		task3.classList.remove('displaynone');
 		taskTransition[2].classList.add('active')
-		taskTransition[1].classList.add('complite')
+		taskTransition[1].classList.add('complete')
 		checked(radio2)
 		answer(1, 1, points)
 		return console.log(points)
@@ -73,7 +73,7 @@
 		task3.classList.add('displaynone');
 		task4.classList.remove('displaynone');
 		taskTransition[3].classList.add('active')
-		taskTransition[2].classList.add('complite')
+		taskTransition[2].classList.add('complete')
 		checked(radio3)
 		answer(2, 2, points)
 		return console.log(points)
@@ -83,7 +83,7 @@
 		task4.classList.add('displaynone');
 		task5.classList.remove('displaynone');
 		taskTransition[4].classList.add('active')
-		taskTransition[3].classList.add('complite')
+		taskTransition[3].classList.add('complete')
 		checked(radio4)
 		answer(2, 2, points)
 		return console.log(points)
@@ -93,7 +93,7 @@
 		task5.classList.add('displaynone');
 		task6.classList.remove('displaynone');
 		taskTransition[5].classList.add('active')
-		taskTransition[4].classList.add('complite')
+		taskTransition[4].classList.add('complete')
 		checked(radio5)
 		answer(2, 3, points)
 		return console.log(points)
