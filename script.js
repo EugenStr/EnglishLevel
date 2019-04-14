@@ -64,6 +64,7 @@
 
 		sum(points)
 		inner(resultPoint);
+		taskTransition[5].classList.add('complete');
 		task6.classList.add('displaynone');
 		result.classList.remove('displaynone');
 	}
