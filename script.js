@@ -1,5 +1,5 @@
-
-   	var startButton =  document.getElementById('start'),
+// Береме все DOM элементы
+   	let startButton =  document.getElementById('start'),
 		startPage = document.getElementById('startPage'),
 		transition = document.getElementById('transition'),
 		task1 = document.getElementById('task1'),
@@ -30,104 +30,50 @@
 		commentInner = document.getElementById('comment'),
 		counterTop = document.getElementById('counter-top'),
 		counterBot = document.getElementById('counter-bot');
+		radioArr = [radio6, radio7, radio8, radio9, radio10, radio11, radio12, radio13],
+		answerArr = [[2, 1], [0, 1], [2, 1], [1, 2], [2, 2], [0, 2], [0, 3], [2, 3]],
+		resultPoint = 0;
 
 
 
-	let resultPoint = 0;
-	var count = randomInteger(100, 200);
-
-	function counterIt(num) {
-		counterTop.innerHTML = 'Данный тест прошли уже ' + num + ' человек!'
-		counterBot.innerHTML = 'Данный тест прошли уже ' + (num + 1) + ' человек!'
-	}
-
-	counterIt(count);
-
+//Старт теста при нажатии на кнопку "Начать тест"
 	startButton.onclick = function() {
 		startPage.classList.add('displaynone')
 		transition.classList.remove('displaynone');
 		task1.classList.remove('displaynone');
 	};
 
-	function toTask2() {
-		task1.classList.add('displaynone');
-		task2.classList.remove('displaynone');
-		taskTransition[1].classList.add('active')
-		taskTransition[0].classList.add('complete')
-		checked(radio1)
-		answer(0, 1, points)
-		return console.log(points)
+//Кнопки перехода между заданиями с записью результата в массив result
+	function toTask(slide1, slide2, trans, radio, ans, point) {
+		slide1.classList.add('displaynone');
+		slide2.classList.remove('displaynone');
+		taskTransition[trans].classList.add('active');
+		taskTransition[trans - 1].classList.add('complete');
+		checked(radio)
+		countPoints(ans, point, points)
+		console.log(points)
 	}
 
-	function toTask3() {
-		task2.classList.add('displaynone');
-		task3.classList.remove('displaynone');
-		taskTransition[2].classList.add('active')
-		taskTransition[1].classList.add('complete')
-		checked(radio2)
-		answer(1, 1, points)
-		return console.log(points)
-	}
-
-	function toTask4() {
-		task3.classList.add('displaynone');
-		task4.classList.remove('displaynone');
-		taskTransition[3].classList.add('active')
-		taskTransition[2].classList.add('complete')
-		checked(radio3)
-		answer(2, 2, points)
-		return console.log(points)
-	}
-
-	function toTask5() {
-		task4.classList.add('displaynone');
-		task5.classList.remove('displaynone');
-		taskTransition[4].classList.add('active')
-		taskTransition[3].classList.add('complete')
-		checked(radio4)
-		answer(2, 2, points)
-		return console.log(points)
-	}
-
-	function toTask6() {
-		task5.classList.add('displaynone');
-		task6.classList.remove('displaynone');
-		taskTransition[5].classList.add('active')
-		taskTransition[4].classList.add('complete')
-		checked(radio5)
-		answer(2, 3, points)
-		return console.log(points)
-	}
-
+// Показать результаты теста
 	function showResult() {
-		
-		checked(radio6)
-		answer(2, 1, points)
-		checked(radio7)
-		answer(0, 1, points)
-		checked(radio8)
-		answer(2, 1, points)
-		checked(radio9)
-		answer(1, 2, points)
-		checked(radio10)
-		answer(2, 2, points)
-		checked(radio11)
-		answer(0, 2, points)
-		checked(radio12)
-		answer(0, 3, points)
-		checked(radio13)
-		answer(2, 3, points)
+		for (let i = 0; i < radioArr.length; i++) {
+			checked(radioArr[i]);
+			countPoints(answerArr[i][0], answerArr[i][1]);
+			console.log(points)
+		}
+
 		sum(points)
 		inner(resultPoint);
 		task6.classList.add('displaynone');
 		result.classList.remove('displaynone');
 	}
 
+//Перезагрузка страницы при клике на кнопку "Вернуться на главную страницу"
 	function back() {
 		document.location.reload(true);
 	}
 
-
+//Проверка "чекнутых" радио кнопок
 	function checked(butt) {
 		for (let i = 0; i < radio1.length; i++) {
 			if (butt[i].checked) {
@@ -137,22 +83,28 @@
 	}
 }
 
-	function answer(a, b, arr) {
-
+	
+//Проверка на правильные ответы с 1 по 6 задания
+	function countPoints(a, b) {
 		if (resultPoint === a) {
-			arr.push(b);
+			points.push(b);
 		}
 		else {
-			arr.push(0);
+			points.push(0);
 		}
 
-		resultPoint = 0
+		resultPoint = 0;
+
+		return points;
 	}
 
+	// суммируем все баллы из массива
 	function sum(arr) {
 		return resultPoint = arr.reduce(function(a, b) {return a + b})
 	}
 
+
+	// Выводит на экран результаты теста в зависимости от баллов
 	function inner(num) {
 		pointsInner.innerHTML = num;
 		if (num <= 4) {
@@ -181,11 +133,18 @@
 		}
 	}
 
+	// Счетчик (рандомное число от 100 до 200)
 	function randomInteger(min, max) {
 	  var rand = min + Math.random() * (max - min)
 	  rand = Math.round(rand);
 	  return rand;
 	}
 
-	
+	var count = randomInteger(100, 200);
 
+	function counterIt(num) {
+		counterTop.innerHTML = 'Данный тест прошли уже ' + num + ' человек!'
+		counterBot.innerHTML = 'Данный тест прошли уже ' + (num + 1) + ' человек!'
+	}
+
+	counterIt(count);
